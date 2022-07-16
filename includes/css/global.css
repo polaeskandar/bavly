@@ -1,0 +1,9 @@
+body {
+    font-family: 'Cairo', sans-serif;
+    overflow: hidden;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
