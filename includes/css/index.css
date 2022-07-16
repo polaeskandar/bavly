@@ -1,9 +1,20 @@
+/* GLOBAL SETTINGS */
 @import "fonts.css";
 @import "global.css";
-@import "scrollbar.css";
-@import "loading-spinner.css";
-@import "button.css";
-@import "nav.css";
-@import "home.css";
-@import "footer.css";
+
+/* LAYOUTS */
+@import "layouts/scrollbar.css";
+@import "layouts/nav.css";
+@import "layouts/footer.css";
+
+/* COMPONENTS */
+@import "components/loading-spinner.css";
+@import "components/button.css";
+
+/* PAGES */
+@import "pages/home.css";
+@import "pages/patriarchs.css";
+@import "pages/details.css";
+@import "pages/search.css";
+
 

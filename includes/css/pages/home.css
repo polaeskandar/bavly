@@ -1,5 +1,5 @@
 .main {
-    background: url(../../media/img/background.png) no-repeat center;
+    background: url(../../../media/img/background.png) no-repeat center;
     background-size: cover;
     width: 100%;
     min-height: 91.5vh;
@@ -20,7 +20,7 @@
 .main h2 span {
     display: inline-block;
     margin-top: 10px;
-    color: #60a5fa;
+    color: var(--light-color);
     font-size: 2em;
     font-weight: 600;
     margin-right: 0.75rem;
@@ -60,5 +60,16 @@
 }
 
 .social-icons svg:hover {
-    color: #60a5fa;
+    color: var(--main-color);
+}
+
+@media (max-width: 991px) {
+    .main {
+        flex-direction: column-reverse;
+        padding: 2rem 0;
+    }
+
+    .index-details-container {
+        padding: 0 2rem;
+    }
 }

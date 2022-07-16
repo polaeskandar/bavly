@@ -1,0 +1,44 @@
+.navbar {
+    direction: rtl;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 1rem 0;
+}
+
+.navbar .navbar-toggler {
+    border-color: #fff;
+}
+
+.navbar .navbar-toggler svg {
+    color: #fff;
+}
+
+.search-btn {
+    border-radius: 6px;
+    border: none;
+    background: var(--main-color);
+    color: #fff;
+}
+
+.search-btn:hover {
+    background: var(--secondary-color);
+}
+
+.search-form {
+    flex-basis: 50%;
+}
+
+.search-form input[type="search"] {
+    flex-basis: 90%;
+}
+
+.search-form .search-btn {
+    flex-basis: 10%;
+}
+
+.navbar a:hover,
+.navbar-nav .nav-active-link,
+.navbar-nav .nav-active-link:hover {
+    color: var(--main-color) !important;
+}

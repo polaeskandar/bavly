@@ -3,7 +3,7 @@
     bottom: 10px;
     right: 10px;
     opacity: 0;
-    background-color: #3b82f6;
+    background-color: var(--main-color);
     color: white;
     font-weight: bold;
     font-size: 12px;
@@ -36,8 +36,8 @@ footer ul {
 }
 
 footer a:hover {
-    color: #3b82f6;
-    border-color: #3b82f6;
+    color: var(--main-color);
+    border-color: var(--main-color);
 }
 
 @media (max-width: 767px) {

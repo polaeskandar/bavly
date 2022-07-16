@@ -1,4 +1,4 @@
-<?php include 'variables.php'; ?>
+<?php include 'constants.php'; ?>
 
 <span class="up"><i class="fa-solid fa-chevron-up"></i></span>
 
