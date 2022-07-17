@@ -31,7 +31,7 @@ if (isset($_GET["search"])) {
             </ul>
             <form class="d-flex me-auto ms-0 search-form" method="GET" action="search.php">
                 <label for="search-input" class="visually-hidden"></label>
-                <input id="search-input" class="form-control me-2" type="search" placeholder="بحث عن آباء بطاركة..." name="search">
+                <input id="search-input" class="form-control me-2" value="<?php echo $_GET["search"] ?? '' ?>" type="search" placeholder="بحث عن آباء بطاركة..." name="search">
                 <button class="search-btn" type="submit">بحث</button>
             </form>
         </div>
