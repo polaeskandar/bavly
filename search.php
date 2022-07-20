@@ -37,6 +37,10 @@ if (isset($_GET["search"]) && $_GET["search"] != null) {
         <img src="<?php echo $mediaPath ?>/img/no-data.jpeg" alt="no_data_found">
         <p>ادخل اسم أو رقم أو تاريخ بطرك في خانة البحث</p>
     </div>
-<?php }
+<?php } else { ?>
+    <div>
+        <img src="./media/img/search.jpeg" alt="search_image" />
+    </div>
+<?php } 
 
 include './includes/layout/footer.php'; ?>
