@@ -1,8 +1,9 @@
 <?php
 
-include 'constants.php';
-include "./includes/layout/header.php";
-include "./includes/layout/nav.php";
+require_once "./includes/layout/header.php";
+require_once "./includes/layout/nav.php";
+require_once 'connect.php';
+require_once 'functions.php';
 
 ?>
 
@@ -22,4 +23,4 @@ include "./includes/layout/nav.php";
     </div>
 </section>
 
-<?php include './includes/layout/footer.php'; ?>
+<?php require_once './includes/layout/footer.php'; ?>

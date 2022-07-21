@@ -1,13 +1,13 @@
 <?php
 
-include 'constants.php';
-include "./includes/layout/header.php";
-include "./includes/layout/nav.php";
-include 'connect.php';
-include 'functions.php';
+require_once "./includes/layout/header.php";
+require_once "./includes/layout/nav.php";
+require_once 'connect.php';
+require_once 'functions.php';
 
-if (isset($_GET["search"]) && $_GET["search"] != null) {
-  $searchTerm = $_GET['search'];
+
+if (isset($_GET["search"]) && trim($_GET["search"]) != null) {
+  $searchTerm = trim($_GET['search']);
   $stmt = $pdo->query("SELECT * FROM patriarch WHERE name LIKE '%$searchTerm%' OR id LIKE '%$searchTerm%' OR Gregorian LIKE '%$searchTerm%'");
   $count = $stmt->rowCount();
 
@@ -16,7 +16,7 @@ if (isset($_GET["search"]) && $_GET["search"] != null) {
     <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
           <div class="patriarch-details-container search">
               <div class="image">
-                  <img src="<?php echo $mediaPath . 'img/' . $row['image'] ?>" style="" alt="patriarch_<?php echo $patriarchId ?>"/>
+                  <img src="http://localhost/patriarch/media/img/<?php echo $row['image'] ?>" style="" alt="patriarch_<?php echo $patriarchId ?>"/>
               </div>
               <div class="content">
                   <h3 class="text-black"><b><?php echo $row['id'] . '-' . $row['name']; ?></b></h3>
@@ -28,19 +28,18 @@ if (isset($_GET["search"]) && $_GET["search"] != null) {
     <?php }
   } else { ?>
       <div class="data-not-found">
-          <img src="<?php echo $mediaPath ?>/img/not-found.jpeg" alt="not_found">
+          <img src="http://localhost/patriarch/media/img/not-found.jpeg" alt="not_found">
           <p>عفواً لا يوجد بيانات</p>
       </div>
   <?php }
 } else if (isset($_GET["search"])) { ?>
     <div class="data-not-found">
-        <img src="<?php echo $mediaPath ?>/img/no-data.jpeg" alt="no_data_found">
+        <img src="http://localhost/patriarch/media/img/no-data.jpeg" alt="no_data_found">
         <p>ادخل اسم أو رقم أو تاريخ بطرك في خانة البحث</p>
     </div>
 <?php } else { ?>
-    <div>
-        <img src="./media/img/search.jpeg" alt="search_image" />
-    </div>
-<?php } 
+    <h2 class="text-center my-5 fw-bold">اكتب اسم الأب البطرك في صندوق البحث الأعلي.</h2>
+    <img src="./media/img/search.jpeg" alt="search_image" class="d-block w-50 ms-auto me-auto" />
+<?php }  ?>
 
-include './includes/layout/footer.php'; ?>
+<?php require_once './includes/layout/footer.php'; ?>

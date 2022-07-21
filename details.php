@@ -1,19 +1,19 @@
 <?php
 
-include 'constants.php';
-include "./includes/layout/header.php";
-include "./includes/layout/nav.php";
-include 'connect.php';
-include 'functions.php';
+require_once "./includes/layout/header.php";
+require_once "./includes/layout/nav.php";
+require_once 'connect.php';
+require_once 'functions.php';
 
 if (isset($_GET['patriarchId']) && $_GET['patriarchId']) {
-  $patriarchId = $_GET['patriarchId'];
-  $query = "SELECT * FROM patriarch WHERE id = $patriarchId";
-  $stmt = $pdo->query($query);
-  while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
+    $patriarchId = $_GET['patriarchId'];
+    $query = "SELECT * FROM patriarch WHERE id = $patriarchId";
+    $stmt = $pdo->query($query);
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+?>
       <div class="patriarch-details-container">
           <div class="image">
-              <img src="<?php echo $mediaPath . 'img/' . $row['image'] ?>" style="" alt="patriarch_<?php echo $patriarchId ?>"/>
+              <img src="http://localhost/patriarch/media/img/<?php echo $row['image'] ?>" style="" alt="patriarch_<?php echo $patriarchId ?>"/>
           </div>
           <div class="content">
               <h3 class="text-black"><b><?php echo $row['id'] . '-' . $row['name']; ?></b></h3>
@@ -33,11 +33,15 @@ if (isset($_GET['patriarchId']) && $_GET['patriarchId']) {
                   console.error('Async: Could not copy text: ', err);
               });
           });
+
+          window.onload = () => {
+            console.log('Loaded');
+          }
       </script>
-  <?php }
+<?php 
+    }
 } else {
   header('Location: http://localhost/');
 }
 
-include './includes/layout/footer.php';
-
+require_once './includes/layout/footer.php';

@@ -1,12 +1,11 @@
 <?php
-include "constants.php";
 
-$activeHome = $currentPageURL === "$baseUrl" || $currentPageURL === "$baseUrl/index.php";
-$activeContent = $currentPageURL === "$baseUrl/patriarchs.php";
-$activeSearchPage = $currentPageURL === "$baseUrl/search.php";
+$activeHome = $currentPageURL === "http://localhost/patriarch" || $currentPageURL === "http://localhost/patriarch/index.php";
+$activeContent = $currentPageURL === "http://localhost/patriarch/patriarchs.php";
+$activeSearchPage = $currentPageURL === "http://localhost/patriarch/search.php";
 
 if (isset($_GET["search"])) {
-  $activeSearch = $currentPageURL === "$baseUrl/search.php?search=" . $_GET['search'];
+  $activeSearch = $currentPageURL === "http://localhost/patriarch/search.php?search=" . $_GET['search'];
 }
 
 ?>
